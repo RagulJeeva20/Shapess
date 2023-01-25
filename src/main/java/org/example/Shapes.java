@@ -18,8 +18,8 @@ public class Shapes {
     float side2;
     float peri;
     float area;
-    double Cir_Peri;
-    double Cir_Area;
+    double CirPeri;
+    double CirArea;
     Scanner s=new Scanner(System.in);
 
     Shapes()
@@ -67,8 +67,8 @@ public class Shapes {
         if (shape==1)
         {
 
-            Cir_Peri =2*3.14*radius;
-            System.out.println("the perimeter of circle is:" + Cir_Peri);
+            CirPeri =2*3.14*radius;
+            System.out.println("the perimeter of circle is:" + CirPeri);
         }
         if (shape==2)
         {
@@ -87,8 +87,8 @@ public class Shapes {
     {
         if (shape==1)
         {
-            Cir_Area =3.14*radius*radius;
-            System.out.println("The area of circle is :" + Cir_Area);
+            CirArea =3.14*radius*radius;
+            System.out.println("The area of circle is :" + CirArea);
         }
         if (shape==2)
         {
