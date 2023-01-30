@@ -5,6 +5,7 @@ package org.example;
 
 
 import java.util.Scanner;
+import java.util.logging.*;
 
 public class Shapes {
     float shape;
@@ -18,48 +19,49 @@ public class Shapes {
     float side2;
     float peri;
     float area;
-    double CirPeri;
-    double CirArea;
+    double cirperi;
+    double cirarea;
     Scanner s=new Scanner(System.in);
+    Logger l=Logger.getLogger("tyler");
 
     Shapes()
     {
-        System.out.println("select the shape by Entering the number: \n 1.circle \n 2.triangle \n 3.rectangle" );
+        l.info("select the shape by Entering the number: \n 1.circle \n 2.triangle \n 3.rectangle" );
         float a =s.nextFloat();
         shape=a;
         if (shape==1)
         {
-            System.out.println("enter the radius:");
+            l.info("enter the radius:");
             double r=s.nextInt();
             radius=r;
-            System.out.println("shape Circle Has Been created");
+            l.info("shape Circle Has Been created");
         }
         if (shape==2)
         {
-            System.out.println("enter the base:");
+            l.info("enter the base:");
             float b=s.nextFloat();
             base=b;
-            System.out.println("enter the side1:");
+            l.info("enter the side1:");
             float c=s.nextFloat();
             side1=c;
-            System.out.println("enter the side1:");
+            l.info("enter the side1:");
             float d=s.nextFloat();
             side2=d;
-            System.out.println("enter the height:");
+            l.info("enter the height:");
             float h=s.nextFloat();
             height=h;
-            System.out.println("shape Triangle Has Been created");
+            l.info("shape Triangle Has Been created");
 
         }
         if (shape==3)
         {
-            System.out.println("enter the length:");
+            l.info("enter the length:");
             int f=s.nextInt();
             length=f;
-            System.out.println("enter the width:");
+            l.info("enter the width:");
             int g=s.nextInt();
             width=g;
-            System.out.println("shape Rectangle Has Been created");
+            l.info("shape Rectangle Has Been created");
         }
     }
     void perimeter()
@@ -67,39 +69,39 @@ public class Shapes {
         if (shape==1)
         {
 
-            CirPeri =2*3.14*radius;
-            System.out.println("the perimeter of circle is:" + CirPeri);
+            cirperi =2*3.14*radius;
+            l.log(Level.INFO,() ->"the perimeter of circle is:" + cirperi);
         }
         if (shape==2)
         {
 
             peri =base+side1+side2;
-            System.out.println("the perimeter of triangle is:" + peri);
+            l.log(Level.INFO, () ->"the perimeter of triangle is:" + peri);
         }
         if (shape==3)
         {
 
             peri =2 * (length+width);
-            System.out.println("the perimeter of rectangle is:" + peri);
+            l.log(Level.INFO, () ->"the perimeter of rectangle is:" + peri);
         }
     }
     void areas()
     {
         if (shape==1)
         {
-            CirArea =3.14*radius*radius;
-            System.out.println("The area of circle is :" + CirArea);
+            cirarea =3.14*radius*radius;
+            l.log(Level.INFO, () ->"The area of circle is :" + cirarea);
         }
         if (shape==2)
         {
             area =(base*height)/2;
-            System.out.println("The area of Triangle is : " + area);
+            l.log(Level.INFO, () ->"The area of Triangle is : " + area);
 
         }
         if (shape==3)
         {
             area =length*breadth;
-            System.out.println("The area of Rectangler is : " + area);
+            l.log(Level.INFO, () ->"The area of Rectangler is : " + area);
 
         }
     }
